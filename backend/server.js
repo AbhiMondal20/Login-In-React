@@ -30,5 +30,5 @@ app.post("/signup", (req, res) =>{
 })
 
 app.listen(8081, () => {
-  console.log("listing");
+  console.log("listening");
 });

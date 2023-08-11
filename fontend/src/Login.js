@@ -8,7 +8,7 @@ function Login() {
     email: "",
     password: "",
   });
-  const [errors, setErroes] = useState({});
+  const [errors, setErrors] = useState({});
 
   const handleInput = (event) => {
     setValues((prev) => ({
@@ -19,7 +19,7 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setErroes(Validation(values));
+    setErrors(Validation(values));
   };
 
   return (

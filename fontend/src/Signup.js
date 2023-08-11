@@ -13,7 +13,7 @@ function Signup() {
   })
 
   const navigate = useNavigate();
-  const [errors, setErroes] = useState({});
+  const [errors, setErrors] = useState({});
 
   const handleInput = (event) => {
     setValues((prev) => ({
@@ -24,13 +24,14 @@ function Signup() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setErroes(Validation(values));
+    setErrors(Validation(values));
     if(errors.name ==="" && errors.email === "" && errors.password === ""){
       axios.post('http://localhost:8081/signup', values)
       .then(res => {
         navigate('/');
       })
-    }
+      .catch(err => console.log(err))
+    }  
   };
 
   return (
